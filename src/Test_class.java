@@ -7,6 +7,7 @@ public class Test_class {
 		JOptionPane p = new JOptionPane();
 		
 		p.showMessageDialog(null, "Ceci est un test.");
+
 		
 	}
 	
