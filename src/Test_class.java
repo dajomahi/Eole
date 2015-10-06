@@ -9,6 +9,8 @@ public class Test_class {
 		p.showMessageDialog(null, "Ceci est un test.");
 
 		
+		
+		
 	}
 	
 }
