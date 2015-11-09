@@ -68,7 +68,6 @@ public class FenGestion extends JFrame{
 		this.pack();
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
-		
 	}
 	public void initButtons(){
 		for(int i = 0; i < buttons.length; i++){
