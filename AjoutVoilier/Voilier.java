@@ -9,5 +9,6 @@ public class Voilier {
 		this.numVoilier = numVoilier;
 		this.nomVoilier = nomVoilier;
 		this.classeVoilier = classeVoilier;
+		this.rating = rating;
 	}
 }
