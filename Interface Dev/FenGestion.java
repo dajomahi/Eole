@@ -9,6 +9,7 @@ public class FenGestion extends JFrame{
 	
 	private JButton[] buttons = new JButton[20]; 
 	private JPanel p;
+	private Layout l;
 	
 	public FenGestion(){
 		//preprossesing
