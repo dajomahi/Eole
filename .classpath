@@ -3,7 +3,19 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="Interface Dev"/>
 	<classpathentry kind="src" path="Le coin meatspin"/>
+<<<<<<< HEAD
+<<<<<<< HEAD
+	<classpathentry kind="src" path="Application"/>
+=======
 	<classpathentry kind="src" path="AjoutVoilier"/>
+<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_25"/>
+=======
+>>>>>>> refs/remotes/origin/master
+=======
+	<classpathentry kind="src" path="AjoutVoilier"/>
+>>>>>>> branch 'master' of https://github.com/dajomahi/Eole.git
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+>>>>>>> refs/remotes/origin/master
 	<classpathentry kind="output" path="bin"/>
 </classpath>
