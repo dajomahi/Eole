@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="Interface Dev"/>
 	<classpathentry kind="src" path="Le coin meatspin"/>
 	<classpathentry kind="src" path="AjoutVoilier"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_25"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
