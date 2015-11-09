@@ -11,4 +11,22 @@ public class Voilier {
 		this.classeVoilier = classeVoilier;
 		this.rating = rating;
 	}
+
+	public int getNumVoilier() {
+		return numVoilier;
+	}
+
+	public String getNomVoilier() {
+		return nomVoilier;
+	}
+
+	public int getClasseVoilier() {
+		return classeVoilier;
+	}
+
+	public int getRating() {
+		return rating;
+	}
+	
+	
 }
