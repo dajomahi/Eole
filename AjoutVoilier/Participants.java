@@ -4,6 +4,11 @@ import java.util.List;
 public class Participants {
 	List<Voilier> lesVoiliers;
 	
+	/**
+	 * @author mmoser
+	 * 
+	 * Constructeur contenant la liste des voilier.
+	 */
 	public Participants(){
 		lesVoiliers = new ArrayList<>();
 	}
