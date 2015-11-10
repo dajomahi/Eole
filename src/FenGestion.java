@@ -1,10 +1,18 @@
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -18,13 +26,17 @@ public class FenGestion extends JFrame{
 	private JButton[] buttons = new JButton[20]; 
 	private JPanel p = new JPanel();
 	private GridLayout l = new GridLayout(5,10,10,10);
+	private Image bateau=null;
 	
 	public FenGestion(){
 		//preprossesing
 		this.setPreferredSize(new Dimension(700,500));
 		this.setTitle("Eole Gestion");
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.getContentPane().add(p);
 		p.setLayout(l);
+		p.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
 		initButtons();
 		// Creates a menubar for a JFrame
         JMenuBar menuBar = new JMenuBar();
@@ -70,9 +82,37 @@ public class FenGestion extends JFrame{
 		this.setVisible(true);
 	}
 	public void initButtons(){
+		//load background picture
+		try {
+			bateau = ImageIO.read(new File("res/bateau.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		for(int i = 0; i < buttons.length; i++){
 			buttons[i] = new JButton();
 			buttons[i].setText((i+1)+"");
+			buttons[i].setIcon(new ImageIcon(bateau));
+			buttons[i].setFocusPainted(false);
+			buttons[i].addComponentListener(new ComponentAdapter() {
+
+                @Override
+                public void componentResized(ComponentEvent e) {
+                    JButton btn = (JButton) e.getComponent();
+                    Dimension size = btn.getSize();
+                    Insets insets = btn.getInsets();
+                    size.width -= insets.left + insets.right;
+                    size.height -= insets.top + insets.bottom;
+                    if (size.width > size.height) {
+                        size.width = -1;
+                    } else {
+                        size.height = -1;
+                    }
+                    Image scaled = bateau.getScaledInstance(size.width, size.height, java.awt.Image.SCALE_SMOOTH);
+                    btn.setIcon(new ImageIcon(scaled));
+                }
+
+            });
 			//buttons[i].setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 			buttons[i].addActionListener(new ActionListener() {
 				
