@@ -93,12 +93,13 @@ public class FenGestion extends JFrame{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+		//We implement the buttons
 		for(int i = 0; i < buttons.length; i++){
 			buttons[i] = new JButton();
 			buttons[i].setText((i+1)+"");
 			buttons[i].setIcon(new ImageIcon(bateau));
 			buttons[i].setFocusPainted(false);
+			//Resize listener updates the icon's size
 			buttons[i].addComponentListener(new ComponentAdapter() {
 
                 @Override
@@ -118,7 +119,7 @@ public class FenGestion extends JFrame{
                 }
 
             });
-			//buttons[i].setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+			//Action listener for when a button has an event
 			buttons[i].addActionListener(new ActionListener() {
 				
 				@Override
