@@ -23,6 +23,10 @@ import javax.swing.JPanel;
 
 public class FenGestion extends JFrame{
 	
+	/**
+	 * Version 1.0.0.1
+	 */
+	private static final long serialVersionUID = 1L;
 	private JButton[] buttons = new JButton[20]; 
 	private JPanel p = new JPanel();
 	private GridLayout l = new GridLayout(5,10,10,10);
@@ -60,7 +64,8 @@ public class FenGestion extends JFrame{
          
         // Create a ButtonGroup and add both radio Button to it. Only one radio
         // button in a ButtonGroup can be selected at a time.
-        ButtonGroup bg = new ButtonGroup();
+        @SuppressWarnings("unused")
+		ButtonGroup bg = new ButtonGroup();
         fileMenu.add(newAction);
         fileMenu.add(openAction);
         fileMenu.addSeparator();
