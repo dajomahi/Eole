@@ -17,7 +17,7 @@ public class FenGestion extends JFrame{
 	
 	private JButton[] buttons = new JButton[20]; 
 	private JPanel p = new JPanel();
-	private GridLayout l = new GridLayout(0,10,10,10);
+	private GridLayout l = new GridLayout(5,10,10,10);
 	
 	public FenGestion(){
 		//preprossesing
@@ -72,7 +72,7 @@ public class FenGestion extends JFrame{
 	public void initButtons(){
 		for(int i = 0; i < buttons.length; i++){
 			buttons[i] = new JButton();
-			buttons[i].setText(i+"");
+			buttons[i].setText((i+1)+"");
 			//buttons[i].setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 			buttons[i].addActionListener(new ActionListener() {
 				
