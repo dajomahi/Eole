@@ -1,3 +1,7 @@
+package app;
+
+import javax.swing.JFrame;
+
 
 public class Launch {
 
@@ -19,7 +23,7 @@ public class Launch {
 			System.out.println(p.lesVoiliers.get(i).getNomVoilier());
 		}
 		
-		static JFrame j = new FenGestion();
+		JFrame j = new FenGestion();
 
 	}
 

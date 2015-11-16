@@ -1,3 +1,5 @@
+package app;
+
 
 public class Voilier {
 	private int numVoilier;

@@ -1,9 +1,9 @@
+package app;
+
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,6 +13,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 
+@SuppressWarnings("serial")
 public class FenGestion extends JFrame{
 	
 	private JButton[] buttons = new JButton[20]; 
