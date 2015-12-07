@@ -29,14 +29,18 @@ public class Conversion {
 		} else {
 			duree += secondes / 60 + ":";
 		}
-		secondes %= 60;
-		duree += secondes + "";
-		
+		if(secondes <= 0){
+			duree += "00";
+		} else {
+			secondes %= 60;
+			duree += secondes + "";
+		}
 		return duree;
 	}
 	
 	public static int TempsCompense(String duree, int rating, double distance){
 		int tempsCompense;
+		System.out.println(duree);
 		int hours= Integer.parseInt(duree.substring(0,2)) * 3600;
 		int minutes= Integer.parseInt(duree.substring(3,5)) * 60;
 		int seconds= Integer.parseInt(duree.substring(6,8)) + minutes + hours;

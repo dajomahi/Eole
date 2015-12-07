@@ -10,9 +10,11 @@ public class Voilier {
 	
 	private int numVoilier;
 	private String nomVoilier;
+	private String nomSkipper;
 	private int classeVoilier;
 	private int rating;
 	private boolean handicap = false;
+	private boolean abandon = false;
 	
 	public Voilier(int numVoilier, String nomVoilier, int classeVoilier, int rating) {
 		this.numVoilier = numVoilier;
@@ -57,6 +59,30 @@ public class Voilier {
 		}
 	}
 	
+	public boolean isHandicap() {
+		return handicap;
+	}
+
+	public void setHandicap(boolean handicap) {
+		this.handicap = handicap;
+	}
+
+	public void setNumVoilier(int numVoilier) {
+		this.numVoilier = numVoilier;
+	}
+
+	public void setNomVoilier(String nomVoilier) {
+		this.nomVoilier = nomVoilier;
+	}
+
+	public void setClasseVoilier(int classeVoilier) {
+		this.classeVoilier = classeVoilier;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
 	public int getNumVoilier() {
 		return numVoilier;
 	}
@@ -81,6 +107,22 @@ public class Voilier {
 		Voilier.distanceEnMiles = distanceEnMiles;
 	}
 	
+	public String getNomSkipper() {
+		return nomSkipper;
+	}
+
+	public void setNomSkipper(String nomSkipper) {
+		this.nomSkipper = nomSkipper;
+	}
+
+	public boolean isAbandon() {
+		return abandon;
+	}
+
+	public void setAbandon(boolean abandon) {
+		this.abandon = abandon;
+	}
+
 	public String tempsReel(){
 		int hDuree = Integer.parseInt(heureArrivee.substring(0, 2)) - Integer.parseInt(heureDepart.substring(0, 2));
 		int minDuree = Integer.parseInt(heureArrivee.substring(3, 5)) - Integer.parseInt(heureDepart.substring(3, 5));
@@ -99,8 +141,12 @@ public class Voilier {
 		} else {
 			duree += dureeFinale / 60 + ":";
 		}
-		dureeFinale %= 60;
-		duree += dureeFinale + "";
+		if(dureeFinale <= 0){
+			duree += "00";
+		} else {
+			dureeFinale %= 60;
+			duree += dureeFinale + "";
+		}
 		
 		if(this.handicap){
 			return Conversion.secondsToHHMMSS(Conversion.TempsCompense(duree, rating, distanceEnMiles));
